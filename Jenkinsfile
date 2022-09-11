@@ -7,6 +7,7 @@ pipeline {
         stage("build") {
             steps {
                echo 'building the application' 
+               sh 'chmod 777 /var/run/docker.sock'
                sh ' docker build -t test .'
 
             }
